@@ -1,0 +1,44 @@
+{
+  "name": "@firenova-studio/react-native-boilerplate",
+  "version": "4.11.1",
+  "description": "FireNova Studio React Native Boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firenova-studio/react-native-boilerplate.git"
+  },
+  "author": "FireNova Studio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/firenova-studio/react-native-boilerplate/issues"
+  },
+  "homepage": "https://firenova-studio.github.io/react-native-boilerplate/",
+  "main": "post-init.script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "CODE_OF_CONDUCT.md",
+    "SECURITY.md",
+    "post-init.script.js",
+    "template.config.js",
+    "template"
+  ],
+  "keywords": [
+    "react",
+    "native",
+    "boilerplate",
+    "firenova-studio",
+    "react-native",
+    "starter-kit"
+  ],
+  "dependencies": {
+    "kleur": "^4.1.4",
+    "prompts": "^2.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}
