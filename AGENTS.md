@@ -1,54 +1,54 @@
 # Repository Guide
 
-This repository is a boilerplate generator. The root contains the generator wrapper, publishing metadata, and documentation. The runnable React Native app template lives in `template/`.
+This repository publishes a React Native boilerplate as a CLI template. The root contains generator metadata, package configuration, documentation, and post-init logic. The generated mobile app source lives in `template/`.
 
-## Where To Work
+## Where to Work
 
-- Generator and packaging concerns live at the repo root.
-- The actual mobile app code lives in `template/`.
-- When changing app architecture, dependencies, navigation, screens, styling, translations, or tests, work inside `template/`.
+- Work at the repository root for generator, publishing, and documentation changes.
+- Work inside `template/` for the React Native app that new projects receive.
+- Keep app architecture, dependencies, navigation, screens, styling, translations, and tests inside `template/`.
 
 ## Template Architecture
 
-The app template uses Feature-Sliced Design with these top-level folders under `template/src`:
+The app template follows a Feature-Sliced Design style under `template/src`:
 
-- `app`: bootstrap, providers, navigation container, route definitions, app tests
-- `screens`: route-level slices; this repo intentionally uses `screens/` instead of canonical FSD `pages/`
-- `widgets`: reusable large composed blocks only when they are shared across screens
-- `features`: reusable user interactions only when they are shared
-- `entities`: reusable domain concepts
-- `shared`: infrastructure, design tokens, theme, assets, API client, i18n bootstrap, reusable UI
+- `app`: app bootstrap, providers, navigation container, route definitions, and app-level tests.
+- `screens`: route-level slices. This template intentionally uses `screens/` instead of canonical FSD `pages/`.
+- `widgets`: large shared UI blocks, only when they are reused across screens.
+- `features`: reusable user interactions, only when reuse is already present.
+- `entities`: reusable domain concepts.
+- `shared`: infrastructure, design tokens, theme, assets, API client, i18n bootstrap, and reusable UI.
 
 ## Import Boundaries
 
-Follow these dependency rules:
+Respect these dependency directions:
 
-- `app` can import from `screens`, `widgets`, `features`, `entities`, `shared`
-- `screens` can import from `widgets`, `features`, `entities`, `shared`
-- `widgets` can import from `features`, `entities`, `shared`
-- `features` can import from `entities`, `shared`
-- `entities` can import only from `shared`
+- `app` can import from `screens`, `widgets`, `features`, `entities`, and `shared`.
+- `screens` can import from `widgets`, `features`, `entities`, and `shared`.
+- `widgets` can import from `features`, `entities`, and `shared`.
+- `features` can import from `entities` and `shared`.
+- `entities` can import only from `shared`.
 
 Additional conventions:
 
-- Import route components from `src/screens/*` public APIs, not internal `ui/*` files.
+- Import route components from `src/screens/*` public APIs, not from internal `ui/*` files.
 - Import reusable shared UI from `src/shared/ui`.
 - Export reusable entity behavior through `src/entities/*/index.ts`.
 - Promote code to `features`, `entities`, or `widgets` only when reuse is real. Keep screen-specific logic inside the screen slice by default.
 
-## Styling And Theme
+## Styling and Theme
 
 - Use `react-native-unistyles` as the styling foundation.
-- Shared theme runtime and tokens live in `template/src/shared/lib/theme`.
+- Keep shared theme runtime and tokens in `template/src/shared/lib/theme`.
 - Persist theme selection through `template/src/shared/lib/storage`.
-- Reusable styling helpers belong in `shared`, not inside screens.
+- Put reusable styling helpers in `shared`, not inside screens.
 
-## Navigation, I18n, And Tests
+## Navigation, I18n, and Tests
 
 - App navigation lives in `template/src/app/navigation` and uses `@react-navigation/native-stack`.
 - Translation bootstrap lives in `template/src/shared/config/i18n`.
 - Shared i18n helpers live in `template/src/shared/lib/i18n`.
-- App and screen tests should use `template/src/tests/TestAppWrapper` unless a narrower wrapper is necessary.
+- App and screen tests should use `template/src/tests/TestAppWrapper` unless a narrower wrapper is enough.
 
 ## Dependency Changes
 
