@@ -1,6 +1,6 @@
 # FireNova Studio React Native Boilerplate
 
-A [React Native](https://reactnative.dev/) CLI template for starting cross-platform mobile apps with a ready-to-use architecture, typed navigation, theming, i18n, API wiring, and test setup.
+A [React Native](https://reactnative.dev/) CLI template for starting cross-platform mobile apps with a ready-to-use architecture, typed navigation, theming, i18n, API wiring, and optional test tooling.
 
 The template keeps application concerns separated so UI, business logic, shared infrastructure, and domain code can evolve without turning the app into a single flat source tree.
 
@@ -45,7 +45,7 @@ Make sure a simulator is running or a physical device is connected before launch
 - i18n bootstrap and shared translation helpers.
 - Shared UI primitives and asset helpers.
 - API client foundation with React Query.
-- Jest and React Native Testing Library setup.
+- Jest and React Native Testing Library installed for projects that add tests.
 
 ## Template Source
 

@@ -1,2 +1,1 @@
-import './src/tests/__mocks__/libs';
-import './src/tests/__mocks__/getAssetsContext';
+// Add shared test setup here when tests are added to the generated app.

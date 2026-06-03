@@ -8,7 +8,6 @@
     "noUnusedLocals": true
   },
   "include": [
-    "src/tests/**/*",
     "./src/**/*",
     "index.d.ts",
     "*.mjs",

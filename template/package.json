@@ -6,13 +6,13 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint:rules": "eslint .",
-    "lint:code-format": "prettier --check \"{src,__mocks__}/**/*.{js,json,md,ts,tsx,yml,yaml}\"",
+    "lint:code-format": "prettier --check \"src/**/*.{js,json,md,ts,tsx,yml,yaml}\"",
     "lint:type-check": "tsc",
     "lint": "yarn lint:rules && yarn lint:code-format && yarn lint:type-check",
     "lint:fix": "yarn lint:rules --fix && yarn lint:code-format --write && yarn lint:type-check",
-    "test:report": "jest --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --coverage",
+    "test:report": "jest --passWithNoTests --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --coverage",
     "pod-install": "npx pod-install"
   },
   "dependencies": {
